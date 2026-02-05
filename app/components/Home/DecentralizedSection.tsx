@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import RightEllipse from '@/public/Images/DecentralizeImage.png'
+import SectionHeader from '@/app/components/ui/SectionHeader'
 
 export default function DecentralizedSection() {
   const points = [
@@ -14,10 +15,10 @@ export default function DecentralizedSection() {
       {/* TEXT CONTENT (CONSTRAINED) */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center">
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold font-poppins text-foreground mb-12">
+          <SectionHeader>
             Decentralized <br />
-            <span className="text-3xl md:text-4xl">Interminable Future</span>
-          </h2>
+            <span className="text-2xl md:text-3xl">Interminable Future</span>
+          </SectionHeader>
 
           <div className="space-y-6 mb-10">
             {points.map((point) => (
