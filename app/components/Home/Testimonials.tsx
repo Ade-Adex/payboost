@@ -22,12 +22,12 @@ export default function Testimonials() {
 
   return (
     <motion.section
-      className="py-24 bg-[#020617] px-6"
+      className="w-full py-16 md:py-24"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-16">
           <SectionHeader className="mx-auto max-w-xl leading-normal">
