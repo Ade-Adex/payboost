@@ -3,6 +3,7 @@ import Hero from '@/app/components/Home/Hero'
 import MarketTable from '@/app/components/Home/MarketTable'
 import { Products } from '@/app/components/Home/Products'
 import StatsBar from '@/app/components/Home/StatsBar'
+import Testimonials from '@/app/components/Home/Testimonials'
 import { WhyChooseUs } from '@/app/components/Home/WhyChooseUs'
 
 export default function Home() {
@@ -13,7 +14,8 @@ export default function Home() {
       <DecentralizedSection />
       <MarketTable />
       <WhyChooseUs />
-      <Products/>
+      <Products />
+      <Testimonials/>
     </div>
   )
 }
