@@ -2,6 +2,8 @@ import Image from 'next/image'
 import HeroImage from '@/public/Images/Hero.png'
 import HeroLeftBackGround from '@/public/Images/Hero-Left.png'
 import Line from '@/app/components/shared/Line'
+import GooglePlay from '@/public/Images/GooglePlay.png'
+import AppStore from '@/public/Images/AppStore.png'
 
 export default function Hero() {
   return (
@@ -30,10 +32,35 @@ export default function Hero() {
               At Finance we care about your future. We help you invest the way
               you want. So you can relax, have fun and let your fund grow.
             </p>
-            <div className="pt-6 relative flex flex-col w-full md:max-w-50">
+            {/* <div className="pt-6 relative flex flex-col w-full md:max-w-50">
               <button className="bg-primary hover:bg-primary/80 text-white mt-3 px-8 py-2 rounded-full font-semibold font-overpass text-lg transition-all shadow-xl shadow-primary/20 active:scale-95 w-fit mx-auto md:w-auto">
                 Get Started
               </button>
+              <Line
+                width="w-16"
+                height="2px"
+                color="bg-gray-700"
+                className="absolute -bottom-4 left-1/2 -translate-x-1/2"
+              />
+            </div> */}
+
+            <div className="pt-6 relative flex flex-col items-center w-full md:max-w-md">
+              {/* Store Buttons */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 mt-3">
+                <Image
+                  src={GooglePlay}
+                  alt="Get it on Google Play"
+                  className="w-[160px] sm:w-[180px] cursor-pointer hover:scale-105 transition-transform"
+                />
+
+                <Image
+                  src={AppStore}
+                  alt="Download on the App Store"
+                  className="w-[160px] sm:w-[180px] cursor-pointer hover:scale-105 transition-transform"
+                />
+              </div>
+
+              {/* Decorative Line */}
               <Line
                 width="w-16"
                 height="2px"
