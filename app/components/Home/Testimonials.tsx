@@ -110,7 +110,7 @@ export default function Testimonials() {
                   className={`transition-all duration-300 rounded-full h-3 ${
                     activeIndex === index
                       ? 'w-10 bg-[#7C3AED]' // Purple pill from screenshot
-                      : 'w-3 bg-white/20'
+                      : 'w-3 bg-white'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -121,13 +121,13 @@ export default function Testimonials() {
             <div className="flex gap-4">
               <button
                 onClick={() => swiperRef.current?.slidePrev()}
-                className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all group active:scale-90"
+                className="p-3 rounded-full border border-primary text-white hover:bg-primary hover:text-white transition-all group active:scale-90"
               >
                 <ArrowLeft size={24} />
               </button>
               <button
                 onClick={() => swiperRef.current?.slideNext()}
-                className="p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all group active:scale-90"
+                className="p-3 rounded-full border border-primary text-white hover:bg-primary hover:text-white transition-all group active:scale-90"
               >
                 <ArrowRight size={24} />
               </button>
