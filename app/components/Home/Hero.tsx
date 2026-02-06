@@ -50,13 +50,13 @@ export default function Hero() {
                 <Image
                   src={GooglePlay}
                   alt="Get it on Google Play"
-                  className="w-[160px] sm:w-[180px] cursor-pointer hover:scale-105 transition-transform"
+                  className="w-40 sm:w-45 cursor-pointer hover:scale-105 transition-transform"
                 />
 
                 <Image
                   src={AppStore}
                   alt="Download on the App Store"
-                  className="w-[160px] sm:w-[180px] cursor-pointer hover:scale-105 transition-transform"
+                  className="w-40 sm:w-45 cursor-pointer hover:scale-105 transition-transform"
                 />
               </div>
 
@@ -79,7 +79,7 @@ export default function Hero() {
               alt="Payboost Illustration"
               priority
               fill
-              className="object-contain md:object-right md:object-center scale-110" // scale-110 makes it a bit bigger
+              className="object-contain md:object-right scale-110" // scale-110 makes it a bit bigger
             />
           </div>
         </div>
