@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export function WhyChooseUs() {
   return (
-    <section className="py-16 md:py-24">
+    <section id="why-choose-us" className="py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-16">
           <SectionHeader>Why Choose Us?</SectionHeader>

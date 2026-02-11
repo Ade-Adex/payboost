@@ -1,19 +1,21 @@
 import Image from 'next/image'
-import HeroImage from '@/public/Images/Hero.png'
+import HeroImage from '@/public/Images/BlendedHero.png'
+import MobileHero from '@/public/Images/Hero.png'
 import HeroLeftBackGround from '@/public/Images/Hero-Left.png'
 import Line from '@/app/components/shared/Line'
 import GooglePlay from '@/public/Images/GooglePlay.png'
 import AppStore from '@/public/Images/AppStore.png'
+import Blended from '@/public/Images/Blended.png'
 
 export default function Hero() {
   return (
-    <section className="relative  flex items-center bg-background overflow-hidden w-full pt-6">
+    <section className="relative flex items-center bg-background overflow-hidden w-full pt-6 md:pt-0">
       {/* 2-Column Grid that spans full screen width */}
-      <div className="grid md:grid-cols-2 w-full h-[90vh]">
+      <div className="grid md:grid-cols-2 w-full h-full md:h-[80vh] ">
         {/* LEFT COLUMN: Content + Background touching edge */}
         <div className="relative flex items-center px-4 md:px-0 md:pl-[10%] lg:pl-[20%]">
           {/* Background Image touching left and top/bottom edges */}
-          <div className="absolute left-0 top-0 inset-0 select-none pointer-events-none">
+          <div className="hidden md:block absolute left-0 top-0 inset-0 select-none pointer-events-none">
             <Image
               src={HeroLeftBackGround}
               alt=""
@@ -25,10 +27,10 @@ export default function Hero() {
 
           {/* Text Content wrapped to stay readable */}
           <div className="flex flex-col relative z-10 w-full">
-            <h1 className="text-3xl md:text-5xl font-semibold text-foreground font-overpass leading-[1.4] md:leading-[1.05] text-left">
+            <h1 className="text-3xl md:text-5xl font-semibold text-foreground font-poppins md:leading-[1.05] text-left">
               Buy, Sell And Move Digital Assets
             </h1>
-            <p className="text-[#767676] text-base md:text-xl mt-4 md:mt-0 font-normal text-left font-overpass">
+            <p className="text-[#767676] text-base md:text-xl mt-4 md:mt-4 font-normal text-left font-overpass">
               At Finance we care about your future. We help you invest the way
               you want. So you can relax, have fun and let your fund grow.
             </p>
@@ -72,17 +74,27 @@ export default function Hero() {
         </div>
 
         {/* RIGHT COLUMN: Large Hero Illustration touching right edge */}
-        <div className="relative flex justify-end items-center bg-transparent w-full">
-          <div className="relative w-full h-75 md:h-full ">
+        <div className="relative flex justify-end bg-transparent w-full">
+          <div className="md:absolute md:-left-24 md:-top-10 w-full h-75 md:h-[100%]">
             <Image
               src={HeroImage}
               alt="Payboost Illustration"
               priority
               fill
-              className="object-contain md:object-right scale-110" // scale-110 makes it a bit bigger
+              className="hidden md:block object-contain md:object-left scale-125 "
+            />
+
+            {/* Mobile Image: Hidden on md screens and up */}
+            <Image
+              src={MobileHero}
+              alt="Mobile Illustration"
+              priority
+              fill
+              className="block md:hidden object-contain scale-110 -mt-8"
             />
           </div>
         </div>
+
       </div>
     </section>
   )

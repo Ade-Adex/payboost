@@ -17,7 +17,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="shrink-0 flex items-center">
             <Link href="/" className="text-xl font-bold tracking-tight">
-              <Image src={Logo} alt="PayBoost Logo" className='w-auto h-8 md:h-12' />
+              <Image src={Logo} alt="PayBoost Logo" className='' />
             </Link>
           </div>
 

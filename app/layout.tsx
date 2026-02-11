@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { plusJakartaSans, poppins, overpass } from './fonts/fonts'
 import './globals.css'
 import Navbar from '@/app/components/Navbar'
+import Footer from '@/app/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Payboost',
@@ -25,6 +26,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Footer/>
       </body>
     </html>
   )
