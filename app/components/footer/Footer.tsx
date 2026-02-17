@@ -8,8 +8,8 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-background text-foreground py-16 px-6 md:px-12 lg:px-24 border-t border-white/10">
-      <div className="w-full max-w-7xl mx-auto">
+    <footer className="w-full bg-background text-foreground py-12 border-t border-white/10">
+      <div className="w-full max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2 max-w-sm">

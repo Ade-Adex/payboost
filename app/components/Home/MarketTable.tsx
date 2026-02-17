@@ -6,7 +6,7 @@ export default function MarketTable() {
 
   return (
     <section className="w-full py-12">
-      <div className="max-w-6xl mx-auto px-4 md:px-0">
+      <div className="max-w-6xl mx-auto px-4">
         <SectionHeader>Market History</SectionHeader>
 
         <div className="overflow-x-auto rounded-xl border border-foreground/10">
