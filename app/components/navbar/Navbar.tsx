@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
+import DesktopDropdown from '@/app/components/navbar/DesktopDropdown'
 import { navLinks } from '@/app/data/navLinks'
 import Logo from '@/public/Images/Logo.png'
-import DesktopDropdown from '@/app/components/navbar/DesktopDropdown'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-background">
-      <div className="max-w-6xl mx-auto px-4 ">
+      <div className="max-w-6xl mx-auto px-6 ">
         <div className="flex justify-between items-center py-3">
           <Link href="/" className="">
             <Image

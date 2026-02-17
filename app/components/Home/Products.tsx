@@ -5,8 +5,8 @@ import Image from 'next/image'
 
 export function Products() {
   return (
-    <section id='products' className="py-16 md:py-24">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="products" className="py-16 md:py-24">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="mb-16">
           <SectionHeader>Products</SectionHeader>
           <SubHeader

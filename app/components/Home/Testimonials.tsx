@@ -1,12 +1,12 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+import { ArrowLeft, ArrowRight, Star } from 'lucide-react'
 import Image from 'next/image'
+import { useRef, useState } from 'react'
 import SwiperCore from 'swiper'
 import { Autoplay, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, Star } from 'lucide-react'
 
 // Swiper styles
 import 'swiper/css'
@@ -27,7 +27,7 @@ export default function Testimonials() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-16">
           <SectionHeader className="mx-auto max-w-xl leading-normal">

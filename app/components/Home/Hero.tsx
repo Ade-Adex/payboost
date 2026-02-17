@@ -1,19 +1,16 @@
-import Image from 'next/image'
-import HeroImage from '@/public/Images/Hero3.png'
-import MobileHero from '@/public/Images/Hero.png'
-import HeroLeftBackGround from '@/public/Images/Hero-Left.png'
 import Line from '@/app/components/shared/Line'
-import GooglePlay from '@/public/Images/GooglePlay.png'
 import AppStore from '@/public/Images/AppStore.png'
-import Blended from '@/public/Images/Blended.png'
+import GooglePlay from '@/public/Images/GooglePlay.png'
+import HeroImage from '@/public/Images/Hero3.png'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
     <section className="relative flex items-center bg-background overflow-hidden w-full pt-6 md:pt-0">
       {/* 2-Column Grid that spans full screen width */}
-      <div className="grid md:grid-cols-2 max-w-6xl mx-auto px-4 py-8 h-full md:h-[80vh]">
+      <div className="grid md:grid-cols-2 w-full max-w-6xl mx-auto px-6 py-8 h-full md:h-[80vh]">
         {/* LEFT COLUMN: Content + Background touching edge */}
-        <div className="relative flex items-center">
+        <div className="relative flex items-center w-full">
           {/* Background Image touching left and top/bottom edges */}
           {/* <div className="hidden md:block absolute left-0 top-0 inset-0 select-none pointer-events-none">
             <Image
@@ -26,9 +23,9 @@ export default function Hero() {
           </div> */}
 
           {/* Text Content wrapped to stay readable */}
-          <div className="flex flex-col relative z-10 w-full">
-            <h1 className="text-3xl md:text-5xl font-bold text-foreground font-lora md:leading-[1.05] text-left">
-              Best place buy and sell{' '}
+          <div className="flex flex-col relative z-10 w-full max-w-[500px] ">
+            <h1 className="w-full max-w-[85%] text-3xl md:text-5xl font-bold text-foreground font-lora md:leading-[1.05] text-left">
+              Best place to buy and sell{' '}
               <span className="text-[#8EB69B]">
                 crypto <br /> currency
               </span>{' '}
@@ -86,13 +83,13 @@ export default function Hero() {
         {/* RIGHT COLUMN: Large Hero Illustration touching right edge */}
         <div className="relative flex justify-end bg-transparent w-full">
           {/* <div className="md:absolute md:-left-24 md:-top-10 w-full h-75 md:h-[100%]"> */}
-          <div className="w-full">
+          <div className="relative w-full h-75 md:h-[100%]">
             <Image
               src={HeroImage}
               alt="Payboost Illustration"
               priority
               fill
-              className="hidden md:block object-cover scale-125 w-full"
+              className="object-cover md:scale-125 w-full"
             />
 
             {/* Mobile Image: Hidden on md screens and up */}

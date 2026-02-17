@@ -10,8 +10,8 @@ export const navLinks: NavLink[] = [
   {
     label: 'Features',
     children: [
-      { label: 'Crypto', href: '#crypto' },
-      { label: 'Pay In', href: '#pay-in' },
+      { label: 'Crypto', href: '#features-crypto' },
+      { label: 'Pay In', href: '#features-pay-in' },
     ],
   },
 

@@ -2,11 +2,9 @@ import SectionHeader from '@/app/components/ui/SectionHeader'
 import { coins } from '@/app/data/coins'
 
 export default function MarketTable() {
- 
-
   return (
     <section className="w-full py-12">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6">
         <SectionHeader>Market History</SectionHeader>
 
         <div className="overflow-x-auto rounded-xl border border-foreground/10">

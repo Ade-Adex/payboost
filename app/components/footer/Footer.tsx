@@ -1,7 +1,5 @@
-import React from 'react'
-import { navLinks } from '@/app/data/navLinks'
-import Image from 'next/image'
 import Logo from '@/public/Images/Logo.png'
+import Image from 'next/image'
 import Link from 'next/link'
 // Importing React Icons
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
@@ -9,7 +7,7 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 const Footer = () => {
   return (
     <footer className="w-full bg-background text-foreground py-12 border-t border-white/10">
-      <div className="w-full max-w-6xl mx-auto px-4">
+      <div className="w-full max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2 max-w-sm">

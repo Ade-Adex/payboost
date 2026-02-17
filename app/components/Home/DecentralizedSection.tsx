@@ -1,7 +1,6 @@
-import React from 'react'
-import Image from 'next/image'
-import RightEllipse from '@/public/Images/DecentralizeImage.png'
 import SectionHeader from '@/app/components/ui/SectionHeader'
+import RightEllipse from '@/public/Images/DecentralizeImage.png'
+import Image from 'next/image'
 
 export default function DecentralizedSection() {
   const points = [
@@ -13,7 +12,7 @@ export default function DecentralizedSection() {
   return (
     <section className="relative w-full overflow-hidden bg-background py-20">
       {/* TEXT CONTENT (CONSTRAINED) */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 grid md:grid-cols-2 items-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 items-center">
         <div>
           <SectionHeader>
             Decentralized <br />
