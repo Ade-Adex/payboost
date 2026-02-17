@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { plusJakartaSans, poppins, overpass } from './fonts/fonts'
+import { plusJakartaSans, poppins, overpass, lora } from './fonts/fonts'
 import './globals.css'
-import Navbar from '@/app/components/Navbar'
-import Footer from '@/app/components/Footer'
+import Navbar from '@/app/components/navbar/Navbar'
+import Footer from '@/app/components/footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Payboost',
@@ -21,12 +21,13 @@ export default function RootLayout({
           ${plusJakartaSans.variable} 
           ${poppins.variable} 
           ${overpass.variable} 
+          ${lora.variable}
           antialiased
         `}
       >
         <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   )

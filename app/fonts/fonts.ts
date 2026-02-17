@@ -1,6 +1,6 @@
 // /app/fonts/fonts.ts
 
-import { Plus_Jakarta_Sans, Poppins, Overpass } from 'next/font/google'
+import { Plus_Jakarta_Sans, Poppins, Overpass, Lora } from 'next/font/google'
 
 export const plusJakartaSans = Plus_Jakarta_Sans({
   variable: '--font-plus-jakarta',
@@ -16,4 +16,10 @@ export const poppins = Poppins({
 export const overpass = Overpass({
   variable: '--font-overpass',
   subsets: ['latin'],
+})
+
+export const lora = Lora({
+  variable: '--font-lora',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
 })

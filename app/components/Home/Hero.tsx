@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import HeroImage from '@/public/Images/BlendedHero.png'
+import HeroImage from '@/public/Images/Hero3.png'
 import MobileHero from '@/public/Images/Hero.png'
 import HeroLeftBackGround from '@/public/Images/Hero-Left.png'
 import Line from '@/app/components/shared/Line'
@@ -11,11 +11,11 @@ export default function Hero() {
   return (
     <section className="relative flex items-center bg-background overflow-hidden w-full pt-6 md:pt-0">
       {/* 2-Column Grid that spans full screen width */}
-      <div className="grid md:grid-cols-2 w-full h-full md:h-[80vh] ">
+      <div className="grid md:grid-cols-2 max-w-6xl mx-auto px-4 py-8 h-full md:h-[80vh]">
         {/* LEFT COLUMN: Content + Background touching edge */}
-        <div className="relative flex items-center px-4 md:px-0 md:pl-[10%] lg:pl-[20%]">
+        <div className="relative flex items-center">
           {/* Background Image touching left and top/bottom edges */}
-          <div className="hidden md:block absolute left-0 top-0 inset-0 select-none pointer-events-none">
+          {/* <div className="hidden md:block absolute left-0 top-0 inset-0 select-none pointer-events-none">
             <Image
               src={HeroLeftBackGround}
               alt=""
@@ -23,16 +23,26 @@ export default function Hero() {
               fill
               className="object-contain object-left"
             />
-          </div>
+          </div> */}
 
           {/* Text Content wrapped to stay readable */}
           <div className="flex flex-col relative z-10 w-full">
-            <h1 className="text-3xl md:text-5xl font-semibold text-foreground font-poppins md:leading-[1.05] text-left">
-              Buy, Sell And Move Digital Assets
+            <h1 className="text-3xl md:text-5xl font-bold text-foreground font-lora md:leading-[1.05] text-left">
+              Best place buy and sell{' '}
+              <span className="text-[#8EB69B]">
+                crypto <br /> currency
+              </span>{' '}
+              asset
             </h1>
-            <p className="text-[#767676] text-base md:text-xl mt-4 md:mt-4 font-normal text-left font-overpass">
-              At Finance we care about your future. We help you invest the way
-              you want. So you can relax, have fun and let your fund grow.
+            <p className="text-base md:text-xl mt-4 md:mt-4 font-normal text-left font-poppins">
+              The easiest and safest way to enter the world of digital assets.
+            </p>
+            <p className="text-xs md:text-sm mt-2 font-normal text-left font-poppins">
+              Our crypto platform gives you instant access to Bitcoin, Ethereum,
+              and hundreds of top cryptocurrencies — all in one powerful,
+              easy-to-use wallet and exchange. Whether you’re just getting
+              started or already trading, we make crypto simple, secure, and
+              profitable.
             </p>
             {/* <div className="pt-6 relative flex flex-col w-full md:max-w-50">
               <button className="bg-primary hover:bg-primary/80 text-white mt-3 px-8 py-2 rounded-full font-semibold font-overpass text-lg transition-all shadow-xl shadow-primary/20 active:scale-95 w-fit mx-auto md:w-auto">
@@ -75,26 +85,26 @@ export default function Hero() {
 
         {/* RIGHT COLUMN: Large Hero Illustration touching right edge */}
         <div className="relative flex justify-end bg-transparent w-full">
-          <div className="md:absolute md:-left-24 md:-top-10 w-full h-75 md:h-[100%]">
+          {/* <div className="md:absolute md:-left-24 md:-top-10 w-full h-75 md:h-[100%]"> */}
+          <div className="w-full">
             <Image
               src={HeroImage}
               alt="Payboost Illustration"
               priority
               fill
-              className="hidden md:block object-contain md:object-left scale-125 "
+              className="hidden md:block object-cover scale-125 w-full"
             />
 
             {/* Mobile Image: Hidden on md screens and up */}
-            <Image
+            {/* <Image
               src={MobileHero}
               alt="Mobile Illustration"
               priority
               fill
               className="block md:hidden object-contain scale-110 -mt-8"
-            />
+            /> */}
           </div>
         </div>
-
       </div>
     </section>
   )

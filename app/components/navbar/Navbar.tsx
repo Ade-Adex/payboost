@@ -1,0 +1,109 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import { Menu, X, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
+
+import { navLinks } from '@/app/data/navLinks'
+import Logo from '@/public/Images/Logo.png'
+import DesktopDropdown from '@/app/components/navbar/DesktopDropdown'
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null)
+
+  return (
+    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-background">
+      <div className="max-w-6xl mx-auto px-4 ">
+        <div className="flex justify-between items-center py-3">
+          <Link href="/" className="">
+            <Image
+              src={Logo}
+              alt="PayBoost Logo"
+              className="object-contain h-10 w-auto"
+            />
+          </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) =>
+              link.children ? (
+                <DesktopDropdown key={link.label} link={link} />
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href!}
+                  className="text-sm font-medium text-foreground/70 hover:bg-primary px-2 py-1.5 rounded-md"
+                >
+                  {link.label}
+                </Link>
+              ),
+            )}
+
+            <button className="bg-primary px-4 py-1.5 rounded-md  text-sm font-medium text-foreground/70 hover:opacity-70 hover:cursor-pointer">
+              Download App
+            </button>
+          </div>
+
+          <button
+            className="md:hidden"
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden px-4 pb-6 space-y-4">
+          {navLinks.map((link) =>
+            link.children ? (
+              <div key={link.label}>
+                <button
+                  onClick={() =>
+                    setMobileDropdown((prev) =>
+                      prev === link.label ? null : link.label,
+                    )
+                  }
+                  className="flex w-full justify-between py-1.5 font-medium"
+                >
+                  {link.label}
+                  <ChevronDown size={18} />
+                </button>
+
+                {mobileDropdown === link.label && (
+                  <div className="pl-4 space-y-1">
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        onClick={() => setIsOpen(false)}
+                        className="block py-1 text-sm opacity-80"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href!}
+                onClick={() => setIsOpen(false)}
+                className="block text-sm font-medium text-foreground/70 hover:bg-primary py-1.5 rounded-md"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
+          <button className="bg-primary px-4 py-1.5 rounded-md  text-sm font-medium text-foreground/70 hover:opacity-70">
+            Download App
+          </button>
+        </div>
+      )}
+    </nav>
+  )
+}

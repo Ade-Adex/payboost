@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #020628;
+  --background: #051516;
   --foreground: #fff;
-  --primary: #5C21DB;
+  --primary: #235347;
   color-scheme: light;
 }
 
@@ -15,6 +15,7 @@
   --font-plus-jakarta: var(--font-plus-jakarta);
   --font-poppins: var(--font-poppins);
   --font-overpass: var(--font-overpass);
+  --font-lora: var(--font-lora);
 }
 
 /* @media (prefers-color-scheme: dark) {

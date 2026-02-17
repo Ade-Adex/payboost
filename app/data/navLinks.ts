@@ -1,7 +1,20 @@
-export const navLinks = [
+// /app/data/navLinks.ts
+
+
+
+import { NavLink } from '@/app/types/navigation'
+
+export const navLinks: NavLink[] = [
   { label: 'Home', href: '/' },
-  // { label: 'How it Works', href: '#how-it-works' },
-  { label: 'Products', href: '#products' },
-  { label: 'Why Choose Us', href: '#why-choose-us' },
+
+  {
+    label: 'Features',
+    children: [
+      { label: 'Crypto', href: '#crypto' },
+      { label: 'Pay In', href: '#pay-in' },
+    ],
+  },
+
+  { label: 'About Us', href: '#about-us' },
   { label: 'Contact', href: '#contact' },
 ]
