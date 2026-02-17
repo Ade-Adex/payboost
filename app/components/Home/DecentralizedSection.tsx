@@ -10,7 +10,7 @@ export default function DecentralizedSection() {
   ]
 
   return (
-    <section className="relative w-full overflow-hidden bg-background py-20">
+    <section className="relative w-full overflow-hidden bg-background  md:py-20 md:mt-20">
       {/* TEXT CONTENT (CONSTRAINED) */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 items-center">
         <div>

@@ -3,25 +3,15 @@ import AppStore from '@/public/Images/AppStore.png'
 import GooglePlay from '@/public/Images/GooglePlay.png'
 import HeroImage from '@/public/Images/Hero3.png'
 import Image from 'next/image'
+import HeroOverlay from '@/public/Images/Hero-Overlay.png'
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center bg-background overflow-hidden w-full pt-6 md:pt-0">
+    <section className="flex items-center bg-background overflow-hidden w-full">
       {/* 2-Column Grid that spans full screen width */}
       <div className="grid md:grid-cols-2 w-full max-w-6xl mx-auto px-6 py-8 h-full md:h-[80vh]">
         {/* LEFT COLUMN: Content + Background touching edge */}
         <div className="relative flex items-center w-full">
-          {/* Background Image touching left and top/bottom edges */}
-          {/* <div className="hidden md:block absolute left-0 top-0 inset-0 select-none pointer-events-none">
-            <Image
-              src={HeroLeftBackGround}
-              alt=""
-              priority
-              fill
-              className="object-contain object-left"
-            />
-          </div> */}
-
           {/* Text Content wrapped to stay readable */}
           <div className="flex flex-col relative z-10 w-full max-w-[500px] ">
             <h1 className="w-full max-w-[85%] text-3xl md:text-5xl font-bold text-foreground font-lora md:leading-[1.05] text-left">
@@ -55,17 +45,17 @@ export default function Hero() {
 
             <div className="pt-6 relative flex flex-col items-center w-full md:max-w-md">
               {/* Store Buttons */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 mt-3">
+              <div className="flex flex-col sm:flex-row items-center gap-4 mt-0">
                 <Image
                   src={GooglePlay}
                   alt="Get it on Google Play"
-                  className="w-40 sm:w-45 cursor-pointer hover:scale-105 transition-transform"
+                  className="w-35 cursor-pointer hover:scale-105 transition-transform"
                 />
 
                 <Image
                   src={AppStore}
                   alt="Download on the App Store"
-                  className="w-40 sm:w-45 cursor-pointer hover:scale-105 transition-transform"
+                  className="w-35 cursor-pointer hover:scale-105 transition-transform"
                 />
               </div>
 
@@ -82,7 +72,6 @@ export default function Hero() {
 
         {/* RIGHT COLUMN: Large Hero Illustration touching right edge */}
         <div className="relative flex justify-end bg-transparent w-full">
-          {/* <div className="md:absolute md:-left-24 md:-top-10 w-full h-75 md:h-[100%]"> */}
           <div className="relative w-full h-75 md:h-[100%]">
             <Image
               src={HeroImage}
@@ -91,17 +80,17 @@ export default function Hero() {
               fill
               className="object-cover md:scale-125 w-full"
             />
-
-            {/* Mobile Image: Hidden on md screens and up */}
-            {/* <Image
-              src={MobileHero}
-              alt="Mobile Illustration"
-              priority
-              fill
-              className="block md:hidden object-contain scale-110 -mt-8"
-            /> */}
           </div>
         </div>
+      </div>
+      <div className="absolute left-0 inset-0 select-none pointer-events-none -bottom-100 lg:-bottom-125 z-40">
+        <Image
+          src={HeroOverlay}
+          alt=""
+          priority
+          fill
+          className="object-contain object-left"
+        />
       </div>
     </section>
   )
