@@ -26,7 +26,7 @@ export default function Services() {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
           {/* Top Row: Global Transfers */}
-          <div className="md:col-span-6 bg-white rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between overflow-hidden h-[300px]">
+          <div className="md:col-span-6 bg-white rounded-3xl p-4 md:p-8 flex flex-col md:flex-row items-center justify-between overflow-hidden h-[300px]">
             <Image
               src={ServicePhones}
               alt="Global"
@@ -45,7 +45,7 @@ export default function Services() {
           {/* Middle Left: Virtual Cards */}
           <div className="md:col-span-3 bg-white rounded-3xl h-[450px] flex flex-col relative overflow-hidden group">
             {/* TOP CONTENT */}
-            <div className="py-4 md:py-8 px-8 flex-shrink-0">
+            <div className="py-4 md:py-8 p-4 md:p-8 flex-shrink-0">
               <div className="bg-[#16B51E] w-10 h-10 rounded-full flex items-center justify-center mb-4 shadow-sm">
                 📈
               </div>
@@ -75,7 +75,7 @@ export default function Services() {
 
           <div className="md:col-span-3 bg-[#051F20] rounded-3xl h-112.5 flex flex-col relative overflow-hidden border border-white/5 group">
             {/* TOP CONTENT */}
-            <div className="pt-8 px-8 shrink-0">
+            <div className="pt-8 px-4 md:px-8 shrink-0">
               <div className="bg-[#16B51E] w-10 h-10 rounded-full flex items-center justify-center mb-4 shadow-sm">
                 ⚙️
               </div>
