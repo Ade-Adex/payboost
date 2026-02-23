@@ -48,12 +48,12 @@ export default function Hero({ mode, setMode }: HeroProps) {
       </div>
 
       {/* CONTENT LAYER */}
-      <div className="relative grid md:grid-cols-2 w-full px-6 py-8 h-full">
+      <div className="relative grid lg:grid-cols-2 w-full px-6 py-8 h-full">
         {/* LEFT COLUMN: Content */}
-        <div className="relative flex items-center w-full md:pl-16 z-30">
+        <div className="relative flex items-center w-full lg:pl-16 z-30">
           <div className="flex flex-col  w-full">
             {/* TOGGLE BUTTONS */}
-            <div className="flex gap-2 mb-3 bg-[#0F3147] p-1 rounded-full justify-center w-fit mx-auto md:mx-0 border border-foreground/10">
+            <div className="flex gap-2 mb-3 bg-[#0F3147] p-1 rounded-full justify-center w-fit mx-auto lg:mx-0 border border-foreground/10">
               <button
                 onClick={() => setMode('pay')}
                 className={`px-6 py-1.5 rounded-full text-sm font-semibold transition-all cursor-pointer ${
@@ -76,7 +76,7 @@ export default function Hero({ mode, setMode }: HeroProps) {
               </button>
             </div>
 
-            <div className="flex gap-2 bg-[#2E4A5D] p-2 rounded-full justify-center w-fit mx-auto md:mx-0 mb-4">
+            <div className="flex gap-2 bg-[#2E4A5D] p-2 rounded-full justify-center w-fit mx-auto lg:mx-0 mb-4">
               <Image
                 src={Vector}
                 alt="Vector"
@@ -85,16 +85,16 @@ export default function Hero({ mode, setMode }: HeroProps) {
               <span className="text-xs font-medium">100% TRUSTED PLATFORM</span>
             </div>
 
-            <h1 className="w-full text-3xl md:text-6xl font-bold text-foreground tracking-[-5%] font-syne text-center md:text-left uppercase transition-all duration-500">
+            <h1 className="w-full text-3xl md:text-6xl font-bold text-foreground tracking-[-5%] font-syne text-center lg:text-left uppercase transition-all duration-500">
               {content[mode].title}
-              <br className="hidden md:inline" />
+              <br className="hidden lg:inline" />
               <span className="text-[#E2FF54]"> {content[mode].highlight}</span>
             </h1>
-            <p className="w-full max-w-87.5 text-xs md:text-sm mt-2 font-normal text-center md:text-left font-poppins text-foreground/80 min-h-10">
+            <p className="w-full max-w-87.5 text-xs md:text-sm mt-2 font-normal text-center lg:text-left font-poppins text-foreground/80 min-h-10">
               {content[mode].description}
             </p>
 
-            <div className="pt-6 relative flex flex-col w-full md:max-w-md">
+            <div className="pt-6 relative flex flex-col w-full lg:max-w-md">
               {/* Store Buttons */}
               <div className="flex flex-row items-center gap-4 mt-0">
                 <Image
@@ -123,7 +123,7 @@ export default function Hero({ mode, setMode }: HeroProps) {
 
         {/* RIGHT COLUMN: Hero Illustration */}
         <div className="relative flex justify-end bg-transparent w-full">
-          <div className="w-full h-75 md:h-full md:absolute transition-opacity duration-500">
+          <div className="w-full h-75 lg:h-full lg:absolute transition-opacity duration-500">
             <Image
               src={content[mode].image}
               alt="Payboost Illustration"
@@ -137,7 +137,7 @@ export default function Hero({ mode, setMode }: HeroProps) {
       </div>
 
       {/* BOTTOM OVERLAY IMAGE */}
-      <div className="absolute bottom-0 md:-bottom-32 left-0 w-full z-20 h-auto pointer-events-none">
+      <div className="absolute bottom-0 lg:-bottom-32 left-0 w-full z-20 h-auto pointer-events-none">
         <Image
           src={HeroOverlay}
           alt="Hero Overlay"
