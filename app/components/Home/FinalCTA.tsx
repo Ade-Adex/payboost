@@ -21,7 +21,7 @@ export default function FinalCTA() {
         <div className="bg-[#051F20] rounded-[40px] border border-white/5 overflow-hidden flex flex-col md:flex-row items-center justify-between p-4 md:p-8 md:p-20 relative min-h-112">
           {/* Left Content */}
           <div className="flex flex-col z-20 max-w-xl text-center md:text-left mb-10 md:mb-0">
-            <h2 className="text-3xl md:text-5xl font-poppins text-white mb-5 leading-tight">
+            <h2 className="text-2xl md:text-4xl font-poppins text-white mb-5 leading-tight">
               Are you ready to <br className="hidden md:block" /> start the
               Journey?
             </h2>
