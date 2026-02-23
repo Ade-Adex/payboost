@@ -34,7 +34,7 @@ export default function Hero({ mode, setMode }: HeroProps) {
   }
 
   return (
-    <section className="relative flex items-center bg-background overflow-hidden w-full min-h-[100vh] py-12 md:py-0">
+    <section className="relative flex items-center bg-background overflow-hidden w-full max-h-[100vh] py-12 md:py-0">
       {/* BACKGROUND IMAGE LAYER */}
       <div className="absolute inset-0 z-0">
         <Image
