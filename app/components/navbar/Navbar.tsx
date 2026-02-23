@@ -3,7 +3,7 @@
 import { ChevronDown, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import DesktopDropdown from '@/app/components/navbar/DesktopDropdown'
 import { navLinks } from '@/app/data/navLinks'
@@ -12,21 +12,43 @@ import Logo from '@/public/Images/Logo.png'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-background">
+    // <nav className="sticky top-0 z-50 w-full border-b border-white/10">
+    <nav
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
+        scrolled || isOpen
+          ? 'bg-background/95 backdrop-blur-md border-b border-foreground/10'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6 ">
         <div className="flex justify-between items-center py-3">
           <Link href="/" className="">
             <Image
               src={Logo}
               alt="PayBoost Logo"
-              className="object-contain h-10 w-auto"
+              className="object-contain h-8 w-auto"
             />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) =>
               link.children ? (
                 <DesktopDropdown key={link.label} link={link} />
@@ -47,7 +69,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
           >
             {isOpen ? <X /> : <Menu />}
@@ -57,7 +79,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-6 space-y-4">
+        <div className="lg:hidden px-4 pb-6 space-y-4 bg-background">
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.label}>

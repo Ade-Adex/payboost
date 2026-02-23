@@ -1,5 +1,12 @@
 import type { Metadata } from 'next'
-import { plusJakartaSans, poppins, overpass, lora } from './fonts/fonts'
+import {
+  plusJakartaSans,
+  poppins,
+  overpass,
+  lora,
+  montserrat,
+  syne,
+} from './fonts/fonts'
 import './globals.css'
 import Navbar from '@/app/components/navbar/Navbar'
 import Footer from '@/app/components/footer/Footer'
@@ -22,6 +29,8 @@ export default function RootLayout({
           ${poppins.variable} 
           ${overpass.variable} 
           ${lora.variable}
+          ${montserrat.variable}
+          ${syne.variable}
           antialiased
         `}
       >

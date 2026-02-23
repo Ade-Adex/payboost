@@ -1,51 +1,102 @@
+'use client'
+
+import Image from 'next/image'
 import Line from '@/app/components/shared/Line'
 import AppStore from '@/public/Images/AppStore.png'
 import GooglePlay from '@/public/Images/GooglePlay.png'
-import HeroImage from '@/public/Images/Hero3.png'
-import Image from 'next/image'
-import HeroOverlay from '@/public/Images/Hero-Overlay.png'
+import HeroImage from '@/public/Images/HeroImage.png'
+import CryptoImage from '@/public/Images/Hero.png'
+import HeroBG from '@/public/Images/Hero BG.png'
+import Vector from '@/public/Images/Vector.png'
+import HeroOverlay from '@/public/Images/HeroOverlay.png'
 
-export default function Hero() {
+interface HeroProps {
+  mode: 'pay' | 'crypto'
+  setMode: (mode: 'pay' | 'crypto') => void
+}
+
+export default function Hero({ mode, setMode }: HeroProps) {
+  const content = {
+    pay: {
+      title: 'Finance with Security And',
+      highlight: 'Flexibility',
+      description:
+        'no-fee checking account with cash back rewards. Enjoy fee-free banking and earn cash back on your everyday purchases.',
+      image: HeroImage,
+    },
+    crypto: {
+      title: 'The Future of Digital',
+      highlight: 'Currency',
+      description:
+        'Buy, sell, and manage your crypto assets with industry-leading security. Seamlessly integrate your digital wallet with your daily spending.',
+      image: CryptoImage, // Swap this with a crypto-specific image if you have one
+    },
+  }
+
   return (
-    <section className="flex items-center bg-background overflow-hidden w-full">
-      {/* 2-Column Grid that spans full screen width */}
-      <div className="grid md:grid-cols-2 w-full max-w-6xl mx-auto px-6 py-8 h-full md:h-[80vh]">
-        {/* LEFT COLUMN: Content + Background touching edge */}
-        <div className="relative flex items-center w-full">
-          {/* Text Content wrapped to stay readable */}
-          <div className="flex flex-col relative z-10 w-full max-w-[500px] ">
-            <h1 className="w-full max-w-[85%] text-3xl md:text-5xl font-bold text-foreground font-lora md:leading-[1.05] text-left">
-              Best place to buy and sell{' '}
-              <span className="text-[#8EB69B]">
-                crypto <br /> currency
-              </span>{' '}
-              asset
-            </h1>
-            <p className="text-base md:text-xl mt-4 md:mt-4 font-normal text-left font-poppins">
-              The easiest and safest way to enter the world of digital assets.
-            </p>
-            <p className="text-xs md:text-sm mt-2 font-normal text-left font-poppins">
-              Our crypto platform gives you instant access to Bitcoin, Ethereum,
-              and hundreds of top cryptocurrencies — all in one powerful,
-              easy-to-use wallet and exchange. Whether you’re just getting
-              started or already trading, we make crypto simple, secure, and
-              profitable.
-            </p>
-            {/* <div className="pt-6 relative flex flex-col w-full md:max-w-50">
-              <button className="bg-primary hover:bg-primary/80 text-white mt-3 px-8 py-2 rounded-full font-semibold font-overpass text-lg transition-all shadow-xl shadow-primary/20 active:scale-95 w-fit mx-auto md:w-auto">
-                Get Started
-              </button>
-              <Line
-                width="w-16"
-                height="2px"
-                color="bg-gray-700"
-                className="absolute -bottom-4 left-1/2 -translate-x-1/2"
-              />
-            </div> */}
+    <section className="relative flex items-center bg-background overflow-hidden w-full min-h-[100vh] py-12 md:py-0">
+      {/* BACKGROUND IMAGE LAYER */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={HeroBG}
+          alt="Background Pattern"
+          fill
+          priority
+          className="object-cover"
+          quality={100}
+        />
+      </div>
 
-            <div className="pt-6 relative flex flex-col items-center w-full md:max-w-md">
+      {/* CONTENT LAYER */}
+      <div className="relative grid md:grid-cols-2 w-full px-6 py-8 h-full">
+        {/* LEFT COLUMN: Content */}
+        <div className="relative flex items-center w-full md:pl-16 z-30">
+          <div className="flex flex-col  w-full">
+            {/* TOGGLE BUTTONS */}
+            <div className="flex gap-2 mb-3 bg-[#0F3147] p-1 rounded-full justify-center w-fit mx-auto md:mx-0 border border-foreground/10">
+              <button
+                onClick={() => setMode('pay')}
+                className={`px-6 py-1.5 rounded-full text-sm font-semibold transition-all cursor-pointer ${
+                  mode === 'pay'
+                    ? 'bg-primary text-foreground shadow-lg'
+                    : 'text-foreground/60 hover:text-foreground'
+                }`}
+              >
+                Pay
+              </button>
+              <button
+                onClick={() => setMode('crypto')}
+                className={`px-6 py-1.5 rounded-full text-sm font-semibold transition-all cursor-pointer ${
+                  mode === 'crypto'
+                    ? 'bg-primary text-foreground shadow-lg'
+                    : 'text-foreground/60 hover:text-foreground'
+                }`}
+              >
+                Crypto
+              </button>
+            </div>
+
+            <div className="flex gap-2 bg-[#2E4A5D] p-2 rounded-full justify-center w-fit mx-auto md:mx-0 mb-4">
+              <Image
+                src={Vector}
+                alt="Vector"
+                className="object-contain relative"
+              />
+              <span className="text-xs font-medium">100% TRUSTED PLATFORM</span>
+            </div>
+
+            <h1 className="w-full text-3xl md:text-6xl font-bold text-foreground tracking-[-5%] font-syne text-center md:text-left uppercase transition-all duration-500">
+              {content[mode].title}
+              <br className="hidden md:inline" />
+              <span className="text-[#E2FF54]"> {content[mode].highlight}</span>
+            </h1>
+            <p className="w-full max-w-87.5 text-xs md:text-sm mt-2 font-normal text-center md:text-left font-poppins text-foreground/80 min-h-10">
+              {content[mode].description}
+            </p>
+
+            <div className="pt-6 relative flex flex-col w-full md:max-w-md">
               {/* Store Buttons */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 mt-0">
+              <div className="flex flex-row items-center gap-4 mt-0">
                 <Image
                   src={GooglePlay}
                   alt="Get it on Google Play"
@@ -70,26 +121,28 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Large Hero Illustration touching right edge */}
+        {/* RIGHT COLUMN: Hero Illustration */}
         <div className="relative flex justify-end bg-transparent w-full">
-          <div className="relative w-full h-75 md:h-[100%]">
+          <div className="w-full h-75 md:h-full md:absolute transition-opacity duration-500">
             <Image
-              src={HeroImage}
+              src={content[mode].image}
               alt="Payboost Illustration"
+              key={mode} // Using key forces a re-animation when mode changes
               priority
               fill
-              className="object-cover md:scale-125 w-full"
+              className="object-contain scale-110 w-full animate-in fade-in zoom-in duration-700"
             />
           </div>
         </div>
       </div>
-      <div className="absolute left-0 inset-0 select-none pointer-events-none -bottom-100 lg:-bottom-125 z-40">
+
+      {/* BOTTOM OVERLAY IMAGE */}
+      <div className="absolute bottom-0 md:-bottom-32 left-0 w-full z-20 h-auto pointer-events-none">
         <Image
           src={HeroOverlay}
-          alt=""
+          alt="Hero Overlay"
+          className="w-full h-full object-fill"
           priority
-          fill
-          className="object-contain object-left"
         />
       </div>
     </section>
