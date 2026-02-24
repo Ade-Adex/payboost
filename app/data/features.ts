@@ -1,21 +1,27 @@
-import Asset from '@/public/Images/Assets.png'
-import Speed from '@/public/Images/Process.png'
-import Security from '@/public/Images/Security.png'
 
-export const features = [
-  {
-    title: 'Broad Assets Asset',
-    desc: 'Access a growing range of stablecoins and digital assets to support diverse business and treasury needs.',
-    icon: Asset,
-  },
-  {
-    title: 'Fast Process',
-    desc: 'We help to make all your activities quick and safe. You can buy coins in minutes safely.',
-    icon: Speed,
-  },
-  {
-    title: 'Extra Safety Security',
-    desc: 'We provide extra safe and tough protection for you in carrying out crypto activities making you more comfortable.',
-    icon: Security,
-  },
-]
+export  const features = [
+    {
+      title: 'Pay',
+      desc: 'Send, Receive, And Manage Your Money Instantly. Fast Transfers, Bill Payments, And Smart Tools',
+    },
+    {
+      title: 'Refer',
+      desc: 'Invite Friends. Earn Rewards. Share Your Referral Code And Get Benefits When Your Friends Join And Start Using The App.',
+    },
+    {
+      title: 'Finance',
+      desc: 'Understand Your Money Better. Track Spending, Set Goals, And Get Simple Insights To Help You Save And Grow.',
+    },
+    {
+      title: 'Finance',
+      desc: 'Grow Your Savings, Set Goals, And Access Quick Loans — All In One Simple Place.',
+    },
+    {
+      title: 'Utility',
+      desc: 'Top Up Airtime, Pay Utilities, And Handle Subscriptions',
+    },
+    {
+      title: 'Virtual Card',
+      desc: 'Create Virtual Cards For Subscriptions And Online Payments, Control Limits, And Freeze Anytime.',
+    },
+  ]
