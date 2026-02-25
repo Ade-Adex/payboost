@@ -167,7 +167,7 @@ export default function Hero({ mode, setMode }: HeroProps) {
       </div>
 
       {/* CONTENT LAYER */}
-      <div className="relative grid lg:grid-cols-2 w-full px-6 pt-8 md:py-16 h-full z-10">
+      <div className="relative grid lg:grid-cols-2 w-full px-6 pt-8 md:py-16 h-full">
         {/* LEFT COLUMN: Content */}
         <div className="relative flex items-center w-full lg:pl-16 z-30">
           <div className="flex flex-col w-full">
@@ -274,37 +274,6 @@ export default function Hero({ mode, setMode }: HeroProps) {
                   mode === 'crypto' ? 'lg:scale-130' : 'lg:scale-110'
                 } w-full`}
               />
-
-              {/* OVERLAYS FOR PAY MODE */}
-              {mode === 'pay' && (
-                <>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20, x: -20 }}
-                    animate={{ opacity: 1, y: 0, x: 0 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                    className="absolute bottom-[15%] left-[10%] w-24 md:w-32 lg:w-40"
-                  >
-                    <Image
-                      src={HeroOverlayImage1}
-                      alt="Card Overlay"
-                      className="object-contain"
-                    />
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.5, type: 'spring', stiffness: 100 }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 md:w-28 lg:w-36"
-                  >
-                    <Image
-                      src={HeroOverlayImage2}
-                      alt="User Overlay"
-                      className="object-contain"
-                    />
-                  </motion.div>
-                </>
-              )}
             </motion.div>
           </AnimatePresence>
         </div>
