@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import HandPhone from '@/public/Images/Free-mockup-hand-holding-iPhone14.png'
 import SectionBG from '@/public/Images/FinalCTABG.png'
 import { SectionDescription } from '@/app/components/shared/Typography'
@@ -15,13 +18,31 @@ export default function FinalCTA() {
           fill
           className="object-cover opacity-40"
         />
+        {/* Subtle animated overlay glow */}
+        <motion.div
+          animate={{ opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute inset-0 bg-primary/5"
+        />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Main CTA Card */}
-        <div className="bg-[#051F20] rounded-[40px] border border-white/5 overflow-hidden flex flex-col md:flex-row items-center justify-between p-4 md:p-8 md:p-20 relative min-h-112">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' as const }}
+          className="bg-[#051F20] rounded-[40px] border border-white/5 overflow-hidden flex flex-col md:flex-row items-center justify-between p-4 md:p-8 md:px-20 relative min-h-112"
+        >
           {/* Left Content */}
-          <div className="flex flex-col z-20 max-w-xl text-center md:text-left mb-10 md:mb-0">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="flex flex-col z-20 max-w-xl text-center md:text-left mb-10 md:mb-0"
+          >
             <h2 className="text-2xl md:text-4xl font-poppins text-white mb-5 leading-tight">
               Are you ready to <br className="hidden md:block" /> start the
               Journey?
@@ -32,18 +53,33 @@ export default function FinalCTA() {
               experience.
             </SectionDescription>
 
-            <ActionButton
-              text="Get Started"
-              borderColor="border-primary"
-              bgColor="bg-primary"
-              hoverBg="hover:bg-primary/20"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="w-fit mx-auto md:mx-0"
-            />
-          </div>
+            >
+              <ActionButton
+                text="Get Started"
+                borderColor="border-primary"
+                bgColor="bg-primary"
+                hoverBg="hover:bg-primary/20"
+              />
+            </motion.div>
+          </motion.div>
 
           {/* Right Content (Hand holding phone) */}
-          {/* We use md:absolute to let the image align strictly to the right/bottom of the parent card */}
-          <div className="relative md:absolute md:right-0 md:bottom-0 w-full md:w-1/2 h-64 md:h-full z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 100, x: 50, rotate: 5 }}
+            whileInView={{ opacity: 1, y: 0, x: 0, rotate: 0 }}
+            viewport={{ once: false }}
+            transition={{
+              delay: 0.5,
+              duration: 1,
+              type: 'spring',
+              bounce: 0.3,
+            }}
+            className="relative md:absolute md:right-0 md:bottom-0 w-full md:w-1/2 h-64 md:h-[90%] z-10"
+          >
             <Image
               src={HandPhone}
               alt="App interface in hand"
@@ -52,8 +88,8 @@ export default function FinalCTA() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-contain object-bottom md:object-right-bottom"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

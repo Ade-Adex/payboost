@@ -26,7 +26,7 @@ export default function Home() {
         />
       </div>
       <AboutUs mode={mode} setMode={setMode} />
-      <Features />
+      <Features mode={mode} setMode={setMode} />
       <Security />
       <Services />
       <FinalCTA />
