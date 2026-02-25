@@ -5,6 +5,8 @@ import Line from '@/app/components/shared/Line'
 import AppStore from '@/public/Images/AppStore.png'
 import GooglePlay from '@/public/Images/GooglePlay.png'
 import HeroBG from '@/public/Images/Hero BG.png'
+import HeroOverlayImage1 from '@/public/Images/Card.png'
+import HeroOverlayImage2 from '@/public/Images/User.png'
 import { contents } from '@/app/data/contents'
 // import HeroOverlay from '@/public/Images/HeroOverlay.png'
 
@@ -103,7 +105,7 @@ export default function Hero({ mode, setMode }: HeroProps) {
         </div>
 
         {/* RIGHT COLUMN: Hero Illustration */}
-        <div className="relative flex justify-end bg-transparent w-full md:mt-48 lg:mt-0">
+        {/* <div className="relative flex justify-end bg-transparent w-full md:mt-48 lg:mt-0">
           <div className="w-full h-75 lg:h-full lg:absolute transition-opacity duration-500">
             <Image
               src={contents[mode].image}
@@ -115,6 +117,46 @@ export default function Hero({ mode, setMode }: HeroProps) {
                 mode === 'crypto' ? 'lg:scale-130' : 'lg:scale-110'
               } w-full animate-in fade-in zoom-in duration-700`}
             />
+          </div>
+        </div> */}
+
+        {/* RIGHT COLUMN: Hero Illustration */}
+        <div className="relative flex justify-end bg-transparent w-full md:mt-48 lg:mt-0">
+          <div className="w-full h-75 lg:h-full lg:absolute transition-opacity duration-500">
+            {/* MAIN ILLUSTRATION */}
+            <Image
+              src={contents[mode].image}
+              alt="Payboost Illustration"
+              key={mode}
+              priority
+              fill
+              className={`object-contain scale-125 md:scale-200 ${
+                mode === 'crypto' ? 'lg:scale-130' : 'lg:scale-110'
+              } w-full animate-in fade-in zoom-in duration-700`}
+            />
+
+            {/* OVERLAY IMAGES (Only for Pay mode) */}
+            {mode === 'pay' && (
+              <div className="absolute inset-0 z-10 pointer-events-none">
+                {/* HeroOverlayImage1: Bottom Left */}
+                <div className="absolute bottom-[10%] left-[10%] w-24 md:w-32 lg:w-40 animate-in slide-in-from-bottom-4 fade-in duration-1000">
+                  <Image
+                    src={HeroOverlayImage1}
+                    alt="Card Overlay"
+                    className="object-contain"
+                  />
+                </div>
+
+                {/* HeroOverlayImage2: Center */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 md:w-28 lg:w-36 animate-in zoom-in-50 fade-in duration-1000">
+                  <Image
+                    src={HeroOverlayImage2}
+                    alt="User Overlay"
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
