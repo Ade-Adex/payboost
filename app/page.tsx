@@ -10,8 +10,6 @@ import Image from 'next/image'
 import { useState } from 'react'
 import HeroOverlay from '@/public/Images/HeroOverlay.png'
 
-
-
 export default function Home() {
   const [mode, setMode] = useState<'pay' | 'crypto'>('pay')
   return (

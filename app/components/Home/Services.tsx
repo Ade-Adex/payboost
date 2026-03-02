@@ -16,6 +16,10 @@ import { LuTrendingUp } from 'react-icons/lu'
 import { HiOutlineCog6Tooth } from 'react-icons/hi2'
 import { FaDollarSign } from 'react-icons/fa'
 
+
+import HeroOverlay from '@/public/Images/HeroOverlay.png'
+
+
 export default function Services() {
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -31,9 +35,9 @@ export default function Services() {
   }
 
   return (
-    <section className="relative overflow-hidden w-full md:pt-6 pb-24 bg-red-400">
+    <section className="relative overflow-hidden w-full md:pt-6 pb-24">
       {/* BACKGROUND IMAGE LAYER */}
-      <div className="absolute z-10 inset-0 w-full">
+      {/* <div className="absolute z-10 inset-0 w-full">
         <Image
           src={SectionBG}
           alt="Background Pattern"
@@ -41,6 +45,15 @@ export default function Services() {
           priority
           className="object-fill w-full scale-125"
           quality={100}
+        />
+      </div> */}
+
+      <div className="absolute -top-20 left-0 w-full z-20 h-72 md:h-auto pointer-events-none">
+        <Image
+          src={HeroOverlay}
+          alt="Hero Overlay"
+          className="w-full h-full object-fill"
+          priority
         />
       </div>
 
