@@ -10,30 +10,27 @@ import ActionButton from '@/app/components/shared/ActionButton'
 export default function FinalCTA() {
   return (
     <section className="relative w-full py-20 px-6 overflow-hidden">
-      {/* BACKGROUND IMAGE LAYER */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={SectionBG}
-          alt="Background Pattern"
-          fill
-          className="object-cover opacity-40"
-        />
-        {/* Subtle animated overlay glow */}
-        <motion.div
-          animate={{ opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute inset-0 bg-primary/5"
-        />
-      </div>
-
       <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={SectionBG}
+            alt="Background Pattern"
+            fill
+            className="object-fill"
+          />
+          <motion.div
+            animate={{ opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 8, repeat: Infinity }}
+            className="absolute inset-0 bg-primary/5"
+          />
+        </div>
         {/* Main CTA Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' as const }}
-          className="bg-[#051F20] rounded-[40px] border border-white/5 overflow-hidden flex flex-col md:flex-row items-center justify-between p-4 md:p-8 md:px-20 relative min-h-112"
+          className="w-full rounded-[40px] overflow-hidden flex flex-col md:flex-row items-center justify-between p-4 md:p-8 md:px-20 relative min-h-112"
         >
           {/* Left Content */}
           <motion.div
@@ -41,11 +38,10 @@ export default function FinalCTA() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex flex-col z-20 max-w-xl text-center md:text-left mb-10 md:mb-0"
+            className="flex flex-col z-20 w-full max-w-xl text-center md:text-left mb-10 md:mb-0"
           >
-            <h2 className="text-2xl md:text-4xl font-poppins text-white mb-5 leading-tight">
-              Are you ready to <br className="hidden md:block" /> start the
-              Journey?
+            <h2 className="text-2xl md:text-4xl font-poppins text-white mb-2 leading-tight">
+              Are you ready to start the Journey?
             </h2>
             <SectionDescription>
               Personalize your settings, follow your progress, archive your
