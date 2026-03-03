@@ -6,8 +6,6 @@ import Line from '@/app/components/shared/Line'
 import AppStore from '@/public/Images/AppStore.png'
 import GooglePlay from '@/public/Images/GooglePlay.png'
 import HeroBG from '@/public/Images/Hero BG.png'
-import HeroOverlayImage1 from '@/public/Images/Card.png'
-import HeroOverlayImage2 from '@/public/Images/User.png'
 import { contents } from '@/app/data/contents'
 
 interface HeroProps {
