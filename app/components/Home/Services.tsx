@@ -2,13 +2,11 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import SectionBG from '@/public/Images/SectionBG.png'
 import ServicePhones from '@/public/Images/ServicePhones.png'
 import CardsMockup from '@/public/Images/CardsMockup.png'
 import InsightsMockup from '@/public/Images/InsightsMockup.png'
 import { SectionHeading, SectionTag } from '@/app/components/shared/Typography'
 import ExpenseDetails from '@/public/Images/ExpenseDetails.png'
-import ActionButton from '@/app/components/shared/ActionButton'
 
 // --- Icons ---
 import { FiGlobe } from 'react-icons/fi'
@@ -35,7 +33,7 @@ export default function Services() {
   }
 
   return (
-    <section className="relative overflow-hidden w-full md:pt-6 pb-6">
+    <section id='services' className="relative overflow-hidden w-full md:pt-6 pb-6">
       {/* BACKGROUND IMAGE LAYER */}
       {/* <div className="absolute z-10 inset-0 w-full">
         <Image

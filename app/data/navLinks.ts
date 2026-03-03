@@ -14,5 +14,6 @@ export const navLinks: NavLink[] = [
     //   { label: 'Pay In', href: '#features-pay-in' },
     // ],
   },
-  { label: 'Contact', href: '#contact' },
+  // { label: 'Contact', href: '#contact' },
+  { label: 'Services', href: '#services' },
 ]
