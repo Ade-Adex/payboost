@@ -160,7 +160,7 @@ export default function WaitlistModal({
                   </p>
                   <button
                     onClick={onClose}
-                    className="mt-8 text-white/40 hover:text-white text-sm transition-colors underline underline-offset-4"
+                    className="mt-8 text-white/40 hover:text-white text-sm transition-colors underline underline-offset-4 cursor-pointer"
                   >
                     Back to site
                   </button>
