@@ -10,8 +10,12 @@ import {
   SectionTag,
 } from '@/app/components/shared/Typography'
 import ActionButton from '@/app/components/shared/ActionButton'
+import { useState } from 'react'
+import WaitlistModal from '@/app/components/shared/WaitlistModal'
 
 export default function Security() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <section className="w-full relative overflow-hidden md:pt-6 pb-24">
       {/* BACKGROUND IMAGE LAYER */}
@@ -95,6 +99,7 @@ export default function Security() {
           >
             <ActionButton
               text="Get Started"
+              onClick={() => setIsModalOpen(true)}
               borderColor="border-primary"
               bgColor="bg-primary"
               hoverBg="hover:bg-primary/20"
@@ -103,6 +108,11 @@ export default function Security() {
           </motion.div>
         </motion.div>
       </div>
+
+      <WaitlistModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   )
 }

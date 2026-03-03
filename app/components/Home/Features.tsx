@@ -6,6 +6,8 @@ import SectionBG from '@/public/Images/SectionBG.png'
 import { SectionHeading, SectionTag } from '@/app/components/shared/Typography'
 import ActionButton from '@/app/components/shared/ActionButton'
 import { featuresData } from '@/app/data/features'
+import WaitlistModal from '@/app/components/shared/WaitlistModal'
+import { useState } from 'react'
 
 interface FeaturesProps {
   mode: 'pay' | 'crypto'
@@ -13,6 +15,8 @@ interface FeaturesProps {
 }
 
 export default function Features({ mode }: FeaturesProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -92,9 +96,18 @@ export default function Features({ mode }: FeaturesProps) {
           transition={{ delay: 0.5 }}
           className="w-full flex"
         >
-          <ActionButton text="Get Started" className="w-fit mx-auto md:mx-0" />
+          <ActionButton
+            text="Get Started"
+            onClick={() => setIsModalOpen(true)}
+            className="w-fit mx-auto md:mx-0"
+          />
         </motion.div>
       </div>
+
+      <WaitlistModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   )
 }

@@ -6,8 +6,12 @@ import HandPhone from '@/public/Images/Free-mockup-hand-holding-iPhone14.png'
 import SectionBG from '@/public/Images/FinalCTABG.png'
 import { SectionDescription } from '@/app/components/shared/Typography'
 import ActionButton from '@/app/components/shared/ActionButton'
+import WaitlistModal from '@/app/components/shared/WaitlistModal'
+import { useState } from 'react'
 
 export default function FinalCTA() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <section className="relative w-full py-20 px-6 overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -56,6 +60,7 @@ export default function FinalCTA() {
             >
               <ActionButton
                 text="Get Started"
+                onClick={() => setIsModalOpen(true)}
                 borderColor="border-primary"
                 bgColor="bg-primary"
                 hoverBg="hover:bg-primary/20"
@@ -87,6 +92,11 @@ export default function FinalCTA() {
           </motion.div>
         </motion.div>
       </div>
+
+      <WaitlistModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   )
 }
