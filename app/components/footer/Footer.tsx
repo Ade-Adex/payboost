@@ -97,10 +97,7 @@ const Footer = () => {
           <Link href="#" className="hover:opacity-100 transition-opacity">
             Copyright
           </Link>
-          <span className="opacity-40">|</span>
-          <Link href="#" className="hover:opacity-100 transition-opacity">
-            Data Policy
-          </Link>
+          {/* <span className="opacity-40">|</span> */}
         </div>
 
         {/* Copyright */}
