@@ -1,15 +1,15 @@
+import Footer from '@/app/components/footer/Footer'
+import Navbar from '@/app/components/navbar/Navbar'
 import type { Metadata } from 'next'
 import {
-  plusJakartaSans,
-  poppins,
-  overpass,
   lora,
   montserrat,
+  overpass,
+  plusJakartaSans,
+  poppins,
   syne,
 } from './fonts/fonts'
 import './globals.css'
-import Navbar from '@/app/components/navbar/Navbar'
-import Footer from '@/app/components/footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Payboost',
