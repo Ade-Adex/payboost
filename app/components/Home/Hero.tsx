@@ -7,6 +7,8 @@ import AppStore from '@/public/Images/AppStore.png'
 import GooglePlay from '@/public/Images/GooglePlay.png'
 import HeroBG from '@/public/Images/Hero BG.png'
 import { contents } from '@/app/data/contents'
+import { useState } from 'react'
+import WaitlistModal from '@/app/components/shared/WaitlistModal'
 
 interface HeroProps {
   mode: 'pay' | 'crypto'
@@ -14,6 +16,8 @@ interface HeroProps {
 }
 
 export default function Hero({ mode, setMode }: HeroProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <section className="relative flex items-center overflow-hidden w-full lg:max-h-screen pt-12  md:py-12">
       {/* BACKGROUND IMAGE LAYER */}
@@ -98,11 +102,13 @@ export default function Hero({ mode, setMode }: HeroProps) {
                 <Image
                   src={GooglePlay}
                   alt="Google Play"
+                  onClick={() => setIsModalOpen(true)}
                   className="w-35 cursor-pointer hover:scale-105 transition-transform"
                 />
                 <Image
                   src={AppStore}
                   alt="App Store"
+                  onClick={() => setIsModalOpen(true)}
                   className="w-35 cursor-pointer hover:scale-105 transition-transform"
                 />
               </div>
@@ -140,6 +146,11 @@ export default function Hero({ mode, setMode }: HeroProps) {
           </AnimatePresence>
         </div>
       </div>
+
+      <WaitlistModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   )
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import Logo from '@/public/Images/Logo.png'
 import AppStore from '@/public/Images/AppStore.png'
 import GooglePlay from '@/public/Images/GooglePlay.png'
@@ -10,8 +12,12 @@ import {
   FaInstagram,
 } from 'react-icons/fa'
 import { navLinks } from '@/app/data/navLinks'
+import WaitlistModal from '@/app/components/shared/WaitlistModal'
+import { useState } from 'react'
 
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <footer className="w-full text-white pb-10 px-6 overflow-hidden">
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
@@ -20,6 +26,7 @@ const Footer = () => {
           <Link href="#">
             <Image
               src={AppStore}
+              onClick={() => setIsModalOpen(true)}
               alt="Download on App Store"
               className="w-32 md:w-40 h-auto object-contain hover:scale-105 transition-transform"
             />
@@ -27,6 +34,7 @@ const Footer = () => {
           <Link href="#">
             <Image
               src={GooglePlay}
+              onClick={() => setIsModalOpen(true)}
               alt="Get it on Google Play"
               className="w-32 md:w-40 h-auto object-contain hover:scale-105 transition-transform"
             />
@@ -100,6 +108,10 @@ const Footer = () => {
           © 2026 Payboost. All rights reserved.
         </p>
       </div>
+      <WaitlistModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </footer>
   )
 }
