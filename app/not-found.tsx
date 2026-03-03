@@ -21,7 +21,7 @@ export default function NotFound() {
 
       <Link
         href="/"
-        className="flex items-center gap-2 bg-[#00B512] hover:bg-[#00E625] text-white px-8 py-3 rounded-full font-bold transition-all active:scale-95 shadow-lg shadow-green-900/20"
+        className="flex items-center gap-2 bg-[#00B512] hover:bg-[#00E625] text-white px-8 py-3 rounded-full font-bold transition-all active:scale-95 shadow-lg shadow-green-900/20 cursor-pointer z-30"
       >
         <MoveLeft size={20} />
         Back to PayBoost
