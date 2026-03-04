@@ -10,7 +10,7 @@ interface TagProps {
 
 export const SectionTag = ({
   children,
-  icon = '🔥',
+  icon = '',
   bgColor = 'bg-amber-100',
   textColor = 'text-black',
 }: TagProps) => (
