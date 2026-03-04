@@ -85,7 +85,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden px-4 pb-6 space-y-4 bg-background">
+          <div className="lg:hidden px-4 py-12 space-y-4 bg-background">
             {navLinks.map((link) =>
               link.children ? (
                 <div key={link.label}>
