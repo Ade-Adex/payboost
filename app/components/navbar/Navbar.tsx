@@ -41,7 +41,7 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 ">
-          <div className="flex justify-between items-center py-3 shadow-lg md:shadow-0">
+          <div className="flex justify-between items-center py-3">
             <Link href="/" className="">
               <Image
                 src={Logo}
