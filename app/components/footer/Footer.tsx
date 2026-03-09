@@ -11,7 +11,7 @@ import {
   FaTwitter,
   FaInstagram,
 } from 'react-icons/fa'
-import { navLinks } from '@/app/data/navLinks'
+//import { navLinks } from '@/app/data/navLinks'
 import WaitlistModal from '@/app/components/shared/WaitlistModal'
 import { useState } from 'react'
 
@@ -53,7 +53,7 @@ const Footer = () => {
             />
           </Link>
 
-          <nav className="flex flex-wrap justify-center gap-6 md:gap-10 text-sm md:text-base font-medium opacity-90">
+            {/*   <nav className="flex flex-wrap justify-center gap-6 md:gap-10 text-sm md:text-base font-medium opacity-90">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -63,7 +63,7 @@ const Footer = () => {
                 {link.label}
               </Link>
             ))}
-          </nav>
+          </nav> */} 
         </div>
 
         {/* Social Icons - Circular Green background as per image */}

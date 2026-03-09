@@ -70,8 +70,8 @@ export default function Hero({ mode, setMode }: HeroProps) {
               animate={{ opacity: 1, y: 0 }}
               className="flex gap-2 bg-[#2E4A5D] p-2 rounded-full justify-center w-fit mx-auto lg:mx-0 mb-4"
             >
-              <span className="text-[10px] md:text-xs font-medium">
-                🔥 Built for individuals and SMEs
+              <span className="text-[10px] md:text-xs font-medium px-2">
+                Built for Individuals and SMEs
               </span>
             </motion.div>
 
