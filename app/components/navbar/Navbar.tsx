@@ -103,7 +103,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-primary px-4 py-1.5 rounded-md text-sm font-medium text-foreground/70 hover:opacity-70 transition-opacity"
+                className="bg-primary px-4 py-1.5 rounded-md text-sm font-medium text-foreground/70 hover:opacity-70 transition-opacity cursor-pointer"
               >
                 Download App
               </button>
