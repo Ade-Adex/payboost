@@ -14,6 +14,7 @@ import {
 //import { navLinks } from '@/app/data/navLinks'
 import WaitlistModal from '@/app/components/shared/WaitlistModal'
 import { useState } from 'react'
+import { handleDownload } from '@/app/utils/download'
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -31,14 +32,15 @@ const Footer = () => {
               className="w-32 md:w-40 h-auto object-contain hover:scale-105 transition-transform"
             />
           </Link>
-          <Link href="#">
+          <button>
             <Image
               src={GooglePlay}
-              onClick={() => setIsModalOpen(true)}
+              // onClick={() => setIsModalOpen(true)}
+              onClick={handleDownload}
               alt="Get it on Google Play"
-              className="w-32 md:w-40 h-auto object-contain hover:scale-105 transition-transform"
+              className="w-32 md:w-40 h-auto object-contain hover:scale-105 transition-transform cursor-pointer"
             />
-          </Link>
+          </button>
         </div>
 
         {/* Logo and Main Nav */}
@@ -52,18 +54,6 @@ const Footer = () => {
               className="object-contain"
             />
           </Link>
-
-            {/*   <nav className="flex flex-wrap justify-center gap-6 md:gap-10 text-sm md:text-base font-medium opacity-90">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href || '#'}
-                className="hover:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav> */} 
         </div>
 
         {/* Social Icons - Circular Green background as per image */}

@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { navLinks } from '@/app/data/navLinks'
 import Logo from '@/public/Images/Logo.png'
 import WaitlistModal from '@/app/components/shared/WaitlistModal'
+import { handleDownload } from '@/app/utils/download'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -102,7 +103,8 @@ export default function Navbar() {
               })}
 
               <button
-                onClick={() => setIsModalOpen(true)}
+                // onClick={() => setIsModalOpen(true)}
+                onClick={handleDownload}
                 className="bg-primary px-4 py-1.5 rounded-md text-sm font-medium text-foreground/70 hover:opacity-70 transition-opacity cursor-pointer"
               >
                 Download App
@@ -141,7 +143,8 @@ export default function Navbar() {
               )
             })}
             <button
-              onClick={() => setIsModalOpen(true)}
+              // onClick={() => setIsModalOpen(true)}
+              onClick={handleDownload}
               className="w-full bg-primary px-4 py-2 rounded-md text-sm font-medium text-foreground/70"
             >
               Download App

@@ -9,6 +9,7 @@ import HeroBG from '@/public/Images/Hero BG.png'
 import { contents } from '@/app/data/contents'
 import { useState } from 'react'
 import WaitlistModal from '@/app/components/shared/WaitlistModal'
+import { handleDownload } from '@/app/utils/download'
 
 interface HeroProps {
   mode: 'pay' | 'crypto'
@@ -102,7 +103,8 @@ export default function Hero({ mode, setMode }: HeroProps) {
                 <Image
                   src={GooglePlay}
                   alt="Google Play"
-                  onClick={() => setIsModalOpen(true)}
+                  // onClick={() => setIsModalOpen(true)}
+                  onClick={handleDownload}
                   className="w-35 cursor-pointer hover:scale-105 transition-transform"
                 />
                 <Image
