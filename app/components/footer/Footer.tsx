@@ -15,6 +15,7 @@ import {
 import WaitlistModal from '@/app/components/shared/WaitlistModal'
 import { useState } from 'react'
 import { handleDownload } from '@/app/utils/download'
+import PlatformNoticeModal from '@/app/components/shared/PlatformNoticeModal'
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -95,7 +96,12 @@ const Footer = () => {
           © 2026 Payboost. All rights reserved.
         </p>
       </div>
-      <WaitlistModal
+      {/* <WaitlistModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      /> */}
+
+      <PlatformNoticeModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

@@ -8,8 +8,9 @@ import GooglePlay from '@/public/Images/GooglePlay.png'
 import HeroBG from '@/public/Images/Hero BG.png'
 import { contents } from '@/app/data/contents'
 import { useState } from 'react'
-import WaitlistModal from '@/app/components/shared/WaitlistModal'
+// import WaitlistModal from '@/app/components/shared/WaitlistModal'
 import { handleDownload } from '@/app/utils/download'
+import PlatformNoticeModal from '@/app/components/shared/PlatformNoticeModal'
 
 interface HeroProps {
   mode: 'pay' | 'crypto'
@@ -149,10 +150,12 @@ export default function Hero({ mode, setMode }: HeroProps) {
         </div>
       </div>
 
-      <WaitlistModal
+      {/* <WaitlistModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-      />
+      /> */}
+
+      <PlatformNoticeModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   )
 }
